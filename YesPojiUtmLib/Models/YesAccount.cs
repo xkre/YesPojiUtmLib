@@ -7,7 +7,7 @@ namespace YesPojiUtmLib.Models
         public string Username { get; set; }
         public string Password { get; set; }
 
-        public virtual Quota Quota { get; set; }
+        public virtual YesQuota Quota { get; set; }
 
         public YesAccount()
         {

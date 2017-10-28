@@ -8,9 +8,9 @@ namespace YesPojiUtmLib.Services
 {
     interface IYesSessionService
     {
-        Task<SessionData> GetSessionDataAsync();
+        Task<YesSessionData> GetSessionDataAsync();
         Task<string> GetRawSessionDataAsync();
 
-        SessionData ParseSession(string rawHtml);
+        YesSessionData ParseSession(string rawHtml);
     }
 }

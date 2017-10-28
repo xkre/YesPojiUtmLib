@@ -11,7 +11,7 @@ namespace YesPojiUtmLib.Services
 {
     public class YesSessionService : IYesSessionService
     {
-        public async Task<SessionData> GetSessionDataAsync()
+        public async Task<YesSessionData> GetSessionDataAsync()
             => ParseSession(await GetRawSessionDataAsync());
 
         public async Task<string> GetRawSessionDataAsync()
@@ -25,7 +25,7 @@ namespace YesPojiUtmLib.Services
             }
         }
 
-        public SessionData ParseSession(string rawHtml)
+        public YesSessionData ParseSession(string rawHtml)
         {
             //TODO::Change the way the data is read.
             var htmlByLine = rawHtml.Split('\n');
@@ -40,7 +40,7 @@ namespace YesPojiUtmLib.Services
 
             try
             {
-                var session = new SessionData()
+                var session = new YesSessionData()
                 {
                     Sent = double.Parse(sentString),
                     Received = double.Parse(recvString),

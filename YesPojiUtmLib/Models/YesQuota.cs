@@ -1,7 +1,7 @@
 ﻿
 namespace YesPojiUtmLib.Models
 {
-    public class Quota
+    public class YesQuota
     {
         public int QuotaId { get; set; }
         public double Available { get; set; }

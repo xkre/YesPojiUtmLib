@@ -8,7 +8,7 @@ namespace YesPojiUtmLib.Events
 {
     public class Events
     {
-        public delegate void SessionDataUpdateEvent(SessionData data);
+        public delegate void SessionDataUpdateEvent(YesSessionData data);
         public delegate void LoginFailedEvent(LoginStatus reason);
 
         public delegate void SimpleEvent();
