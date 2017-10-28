@@ -36,7 +36,7 @@ namespace YesPojiUtmLib.Services
             return await DoLogin(loginInfo);
         }
 
-        public async Task<LoginStatus> LoginAsync(Account a)
+        public async Task<LoginStatus> LoginAsync(YesAccount a)
         {
             return await LoginAsync(a.Username, a.Password);
         }

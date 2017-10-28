@@ -7,6 +7,6 @@ namespace YesPojiUtmLib.Models
         public double Available { get; set; }
 
         public int AccountId { get; set; }
-        public virtual Account Account { get; set; }
+        public virtual YesAccount Account { get; set; }
     }
 }

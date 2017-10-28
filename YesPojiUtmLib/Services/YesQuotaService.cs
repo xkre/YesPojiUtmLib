@@ -30,7 +30,7 @@ namespace YesPojiUtmLib.Services
             return quota;
         }
 
-        public async Task<double> GetQuotaAsync(Account a)
+        public async Task<double> GetQuotaAsync(YesAccount a)
         {
             return await GetQuotaAsync(a.Username);
         }

@@ -1,7 +1,7 @@
 ﻿
 namespace YesPojiUtmLib.Models
 {
-    public class Account
+    public class YesAccount
     {
         public int AccountId { get; set; }
         public string Username { get; set; }
@@ -9,12 +9,12 @@ namespace YesPojiUtmLib.Models
 
         public virtual Quota Quota { get; set; }
 
-        public Account()
+        public YesAccount()
         {
 
         }
 
-        public Account(string u, string p = "")
+        public YesAccount(string u, string p = "")
         {
             Username = u;
             Password = p;

@@ -10,7 +10,7 @@ namespace YesPojiUtmLib.Services
     interface IYesLoginService
     {
         Task<LoginStatus> LoginAsync(string username, string password);
-        Task<LoginStatus> LoginAsync(Account a);
+        Task<LoginStatus> LoginAsync(YesAccount a);
 
         Task<bool> LogoutAsync();
 
