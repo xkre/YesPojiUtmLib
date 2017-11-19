@@ -6,7 +6,7 @@ using YesPojiUtmLib.Enums;
 
 namespace YesPojiUtmLib.Services
 {
-    interface IYesNetworkService
+    public interface IYesNetworkService
     {
         Task<NetworkCondition> GetNetworkConditionAsync();
         Task<bool> IsConnectedToYesAsync();

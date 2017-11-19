@@ -6,7 +6,7 @@ using YesPojiUtmLib.Models;
 
 namespace YesPojiUtmLib.Services
 {
-    interface IYesSessionService
+    public interface IYesSessionService
     {
         Task<YesSessionData> GetSessionDataAsync();
         Task<string> GetRawSessionDataAsync();

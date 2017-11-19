@@ -6,7 +6,7 @@ using YesPojiUtmLib.Models;
 
 namespace YesPojiUtmLib.Services
 {
-    interface IYesQuotaService
+    public interface IYesQuotaService
     {
         Task<double> GetQuotaAsync(string username);
         Task<double> GetQuotaAsync(YesAccount a);

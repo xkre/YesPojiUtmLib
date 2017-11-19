@@ -7,7 +7,7 @@ using YesPojiUtmLib.Models;
 
 namespace YesPojiUtmLib.Services
 {
-    interface IYesLoginService
+    public interface IYesLoginService
     {
         Task<LoginStatus> LoginAsync(string username, string password);
         Task<LoginStatus> LoginAsync(YesAccount a);
