@@ -1,7 +1,7 @@
 ﻿
 namespace YesPojiUtmLib.Models
 {
-    public class YesAccount
+    public class YesAccount : IAccount
     {
         public int AccountId { get; set; }
         public string Username { get; set; }
