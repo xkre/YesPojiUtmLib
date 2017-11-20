@@ -23,6 +23,7 @@ namespace YesPojiUtmLib.Enums
         LDAPLookupFailde = 17,
         InactiveUserAccount = 18,
         ExpiredAccount = 19,
+        LimitReachedOrOtherError = 99,
         HTTPError = 100
     }
 }

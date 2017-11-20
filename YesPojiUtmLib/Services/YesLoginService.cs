@@ -162,23 +162,29 @@ namespace YesPojiUtmLib.Services
         {
             //Searches for parseCause( and get the value after it
             //Might be better for performance to separate the html by line first.
-            var loginURL = Regex.Match(rawHTML, @"replace\(([^)]*)\)").Groups[1].Value;
-            loginURL = loginURL.Replace('"', ' ').Trim();
-
-            using (var client = new HttpClient())
+            try
             {
-                var response = await client.GetAsync(loginURL);
-                var loginHtml = await response.Content.ReadAsStringAsync();
+                var loginURL = Regex.Match(rawHTML, @"replace\(([^)]*)\)").Groups[1].Value;
+                loginURL = loginURL.Replace('"', ' ').Trim();
 
-                var reason = Regex.Match(loginHtml, @"deniedCause = parseCause\(([^)]*)").Groups[1].Value;
+                using (var client = new HttpClient())
+                {
+                    var response = await client.GetAsync(loginURL);
+                    var loginHtml = await response.Content.ReadAsStringAsync();
 
-                //Remove "
-                reason = reason.Replace('\"', ' ');
-                reason = reason.Trim();
+                    var reason = Regex.Match(loginHtml, @"deniedCause = parseCause\(([^)]*)").Groups[1].Value;
 
-                LoginStatus parsedReason = (LoginStatus)int.Parse(reason);
+                    //Remove "
+                    reason = reason.Replace('\"', ' ');
+                    reason = reason.Trim();
 
-                return parsedReason;
+                    LoginStatus parsedReason = (LoginStatus)int.Parse(reason);
+
+                    return parsedReason;
+                }
+            }catch (Exception)
+            {
+                return LoginStatus.LimitReachedOrOtherError;
             }
         }
 
@@ -202,7 +208,7 @@ namespace YesPojiUtmLib.Services
             public string Realm { get; private set; }
             public string DeniedPage => $"/pas/parsed/utm1/index_desktop.html?key={Key}&dummy=true";
             public string ShowSession => "yes";
-            public string AcceptedUrl => $"http://detectportal.firefox.com/success.txt?username={Username}";
+            public string AcceptedUrl => $"https://google.com";
             public string User { get; private set; }
         }
     }
