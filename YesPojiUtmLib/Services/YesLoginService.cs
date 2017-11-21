@@ -208,7 +208,7 @@ namespace YesPojiUtmLib.Services
             public string Realm { get; private set; }
             public string DeniedPage => $"/pas/parsed/utm1/index_desktop.html?key={Key}&dummy=true";
             public string ShowSession => "yes";
-            public string AcceptedUrl => $"https://google.com";
+            public string AcceptedUrl => $"http://detectportal.firefox.com/success.txt";
             public string User { get; private set; }
         }
     }
